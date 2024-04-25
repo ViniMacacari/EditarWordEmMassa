@@ -1,2 +1,2 @@
 # EditarWordEmMassa
-Editar arquivos word em massa
+- Editar arquivos word em massa utilizando Node.JS
