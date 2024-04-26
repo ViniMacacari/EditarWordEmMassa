@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "docxtemplater": "^3.47.1",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "mammoth": "^1.7.1",
+    "path": "^0.12.7",
+    "pizzip": "^3.1.7",
+    "xlsx": "^0.18.5"
+  }
+}
