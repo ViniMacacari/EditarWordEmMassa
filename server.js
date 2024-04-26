@@ -9,9 +9,16 @@ const nomeColuna = pathExcel.SheetNames[0] // Pega a linha 0 como identificador 
 const dataExcel = XLSX.utils.sheet_to_json(pathExcel.Sheets[nomeColuna]) // Converte para JSON
 
 const arrayDeObjetos = dataExcel.map(item => ({ // Transforma em array as colunas
-    NOME: item.NOME,
-    IDADE: item.IDADE,
-    CURSO: item.CURSO
+    COLABORADOR: item.COLABORADOR,
+    CPF: item.CPF,
+    MODELO: item.MODELO,
+    NOTEBOOK: item.NOTEBOOK,
+    SERIAL: item.SERIAL,
+    PATRIMONIO: item.PATRIMONIO,
+    CIDADE: item.CIDADE,
+    DIA: item.DIA,
+    MES: item.MES,
+    ANO: item.ANO
 }))
 
 const modelo = './doc/modelo.docx' // Modelo do documento Word
@@ -33,10 +40,12 @@ arrayDeObjetos.forEach((data, index) => {
     }
 
     let contador = 1
-    let documentoAtualizado = `./result/documento_preenchido${index + 1}.docx`
+    // let documentoAtualizado = `./result/documento_preenchido${index + 1}.docx`
+    let documentoAtualizado = `./result/TERMO_${data.COLABORADOR}.docx`
 
     while (fs.existsSync(documentoAtualizado)) {
-        documentoAtualizado = `./result/documento_preenchido${index + 1}_${contador}.docx`
+        // documentoAtualizado = `./result/documento_preenchido${index + 1}_${contador}.docx`
+        documentoAtualizado = `./result/TERMO_${data.COLABORADOR}.docx`
         contador++
     }
 
@@ -44,4 +53,4 @@ arrayDeObjetos.forEach((data, index) => {
     fs.writeFileSync(documentoAtualizado, buffer)
 })
 
-console.log('Processo concluído!')
+console.log('Processo concluído! Pressione qualquer tecla para fechar.')
