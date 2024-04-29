@@ -41,11 +41,11 @@ arrayDeObjetos.forEach((data, index) => {
 
     let contador = 1
     // let documentoAtualizado = `./result/documento_preenchido${index + 1}.docx`
-    let documentoAtualizado = `./result/TERMO_${data.COLABORADOR}.docx`
+    let documentoAtualizado = `./result/TERMO_${data.COLABORADOR}_${contador}.docx`
 
     while (fs.existsSync(documentoAtualizado)) {
         // documentoAtualizado = `./result/documento_preenchido${index + 1}_${contador}.docx`
-        documentoAtualizado = `./result/TERMO_${data.COLABORADOR}.docx`
+        documentoAtualizado = `./result/TERMO_${data.COLABORADOR}_${contador}.docx`
         contador++
     }
 
